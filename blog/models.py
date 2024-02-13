@@ -51,6 +51,7 @@ class Post(models.Model):
     def __str__(self):
         # Return a human-readable string representation of the post
         return self.title
+    
     def get_absolute_url(self):
         return reverse('blog:post_detail',
                        args=[
