@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 class PublishedManager(models.Manager):
     # adding custom manager to Post Model
@@ -29,6 +30,7 @@ class Post(models.Model):
         related_name='blog_posts'
     )
     body = models.TextField()
+    tags = TaggableManager()
 
     # Date and time related fields
     publish = models.DateTimeField(default=timezone.now)
