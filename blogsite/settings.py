@@ -76,14 +76,16 @@ WSGI_APPLICATION = 'blogsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'kadhir',
+        'PASSWORD': 'testpress1$',
+        # 'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -121,18 +123,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-#Email service configuration
-
-import environ
-env = environ.Env()
-environ.Env.read_env()
-
+# Email services Dummy Entries environ failed to work 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT = '587'
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = 'olin.wiegand98@ethereal.email'
+EMAIL_HOST_USER = 'smtp.ethereal.email'
+EMAIL_HOST_PASSWORD = '8rNcXEgWYwjcn8sGHW'
 
 SITE_ID = 1
