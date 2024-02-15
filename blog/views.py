@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
-from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from .models import Post
 from .forms import EmailPostForm, CommentForm, SearchForm
 from django.contrib.postgres.search import TrigramSimilarity
